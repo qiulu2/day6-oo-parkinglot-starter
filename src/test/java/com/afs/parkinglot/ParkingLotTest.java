@@ -76,10 +76,11 @@ public class ParkingLotTest {
 
         ParkingLot parkingLot = new ParkingLot(10);
         Ticket ticket1 = parkingLot.parking(car1);
-        Car car =  parkingLot.fetchCar(ticket1);
+        Car car = parkingLot.fetchCar(ticket1);
 
         Assertions.assertNull(parkingLot.fetchCar(ticket1));
     }
+
     // Case 6 - Given a parking lot without any position, and a car, When park the car, Then return null
     @Test
     public void should_return_null_when_given_a_parking_lot_without_any_position_and_a_car() {
@@ -93,7 +94,7 @@ public class ParkingLotTest {
 
     // case 7 - Given a parking lot, and a wrong parking ticket, When fetch the car, Then return error msg "Unrecognized parking ticket"
     @Test
-    public void should_return_msg_unrecognized_when_given_a_parking_lot_and_a_wrong_parking_ticket(){
+    public void should_return_msg_unrecognized_when_given_a_parking_lot_and_a_wrong_parking_ticket() {
         Car car1 = new Car(110);
         ParkingLot parkingLot = new ParkingLot(10);
         Ticket ticket1 = parkingLot.parking(car1);
@@ -107,11 +108,11 @@ public class ParkingLotTest {
 
     // case 8 - Given a parking lot without any position, and a car, When park the car, Then return error msg "No available position"
     @Test
-    public void should_return_no_available_msg_when_given_a_parking_lot_without_any_position_and_a_car(){
+    public void should_return_no_available_msg_when_given_a_parking_lot_without_any_position_and_a_car() {
         Car car1 = new Car(110);
         ParkingLot parkingLot = new ParkingLot(0);
         Ticket ticket1 = parkingLot.parking(car1);
 
-        Assertions.assertEquals("No available position",outputStream.toString().trim());
+        Assertions.assertEquals("No available position", outputStream.toString().trim());
     }
 }

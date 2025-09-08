@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ParkingLot {
     private Integer capacity;
-    private List<Ticket> tickets;
+    private final List<Ticket> tickets;
 //    private List<Ticket> usedTickets;
 
     public ParkingLot(int capacity) {
@@ -24,6 +24,16 @@ public class ParkingLot {
         return ticket;
     }
 
+    public Ticket tryPark(Car car) {
+        if (capacity <= 0) {
+            return null;
+        }
+        capacity--;
+        Ticket ticket = new Ticket(car);
+        tickets.add(ticket);
+        return ticket;
+    }
+
     public Car fetchCar(Ticket ticket) {
         for (Ticket t : tickets) {
             if (t.getTicketNumber().equals(ticket.getTicketNumber())) {
@@ -34,6 +44,18 @@ public class ParkingLot {
             }
         }
         System.out.println("Unrecognized parking ticket");
+        return null;
+    }
+
+    public Car tryFetch(Ticket ticket) {
+        for (Ticket t : tickets) {
+            if (t.getTicketNumber().equals(ticket.getTicketNumber())) {
+                Car car = t.getCar();
+                tickets.remove(t);
+                capacity++;
+                return car;
+            }
+        }
         return null;
     }
 }
