@@ -6,6 +6,7 @@ import java.util.List;
 public class ParkingLot {
     private Integer capacity;
     private List<Ticket> tickets;
+//    private List<Ticket> usedTickets;
 
     public ParkingLot(int capacity) {
         this.capacity = capacity;
@@ -23,6 +24,13 @@ public class ParkingLot {
     }
 
     public Car fetchCar(Ticket ticket) {
+        for (Ticket t : tickets) {
+            if (t.getTicketNumber().equals(ticket.getTicketNumber())) {
+                tickets.remove(t);
+                capacity++;
+                return t.getCar();
+            }
+        }
         return null;
     }
 }

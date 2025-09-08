@@ -31,7 +31,24 @@ public class ParkingLotTest {
         Assertions.assertEquals(car, fetchedCar);
     }
 
-    // Case 3 - Given a parking lot with two parked cars, and two parking tickets, When fetch the car twice, Then return the right car with each ticket
+//    // Case 3 - Given a parking lot with two parked cars, and two parking tickets, When fetch the car twice, Then return the right car with each ticket
+//    @Test
+//    public void should_return_the_right_car_with_each_ticket_when_given_a_parking_lot_with_two_parked_cars_and_two_parking_tickets() {
+//        Car car1 = new Car(110);
+//        Car car2 = new Car(120);
+//
+//        ParkingLot parkingLot = new ParkingLot(10);
+//
+//        Ticket ticket1 = parkingLot.parking(car1);
+//        Ticket ticket2 = parkingLot.parking(car2);
+//
+//        Car fetchedCar1 = parkingLot.fetchCar(ticket1);
+//        Car fetchedCar2 = parkingLot.fetchCar(ticket2);
+//
+//        Assertions.assertEquals(car1, fetchedCar1);
+//        Assertions.assertEquals(car2, fetchedCar2);
+//    }
+
     // Case 4 - Given a parking lot, and a wrong parking ticket, When fetch the car, Then return nothing.
     // Case 5 - Given a parking lot, and a used parking ticket, When fetch the car, Then return nothing.
     // Case 6 - Given a parking lot without any position, and a car, When park the car, Then return nothing
