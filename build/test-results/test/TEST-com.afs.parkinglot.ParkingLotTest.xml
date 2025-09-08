@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.afs.parkinglot.ParkingLotTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-09-08T08:30:15" hostname="QIULU2-W11" time="0.013">
+  <properties/>
+  <testcase name="should_return_a_parkingTicket_when_given_a_parking_lot_and_car()" classname="com.afs.parkinglot.ParkingLotTest" time="0.013"/>
+  <system-out><![CDATA[-919677053
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
